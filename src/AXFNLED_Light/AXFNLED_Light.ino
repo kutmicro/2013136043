@@ -18,8 +18,10 @@
 #define LD_TM       1     // led minus count (0-255) 밝기를 줄여주기 위한 변수
 
 unsigned short V_A = 0, V_X = 0, V_FN = 0;           // for multi-key input processing (동시 입력값)
-unsigned short _ON_A = 0, _ON_X = 0, _ON_FN = 0;     // for prevent unnecessory processing(예방)
+unsigned short _ON_A = 0, _ON_X = 0, _ON_FN = 0;     // for prevent unnecessory processing
 unsigned short TM_A = LD, TM_X = LD, TM_FN = LD;   // fading tmp value (각 키패드를 눌렀을 때 led값을 저장)
+
+
 
 /* 
  * Init
@@ -27,17 +29,29 @@ unsigned short TM_A = LD, TM_X = LD, TM_FN = LD;   // fading tmp value (각 키�
 void setup() {
   Serial.begin(BAUDRATE); //
   Serial.print("Arduino based osu keyboard. BY NOVANG! Welcome!\n");
+  // 출력 핀으로 설정
   pinMode(KP_A,INPUT_PULLUP);     // define pinmode 핀모드를 정의한다.
   pinMode(KP_X,INPUT_PULLUP);   // 아두이노 내부에 있는 풀업 저항을 이용하는 함수
-  pinMode(KP_FN,INPUT_PULLUP);
+  pinMode(KP_FN,INPUT_PULLUP);   //내부 풀업저항으로 이용하는 경우, digitalWrite는 필요하지 않다.
   pinMode(LP_A,OUTPUT);     //각각 LP 변수에 저장되어 있는 값 출력 
-  pinMode(LP_X,OUTPUT);
+  pinMode(LP_X,OUTPUT);     //가변저항을 연결해 사용하기 때문에 digitalwrite를 사용
   pinMode(LP_FN,OUTPUT);
   digitalWrite(LP_A,LD);    // indicate start-up
   digitalWrite(LP_X,LD);    //led의 값을 LP_ 값에 디지털 신호로 입력한다.
   digitalWrite(LP_FN,LD);
   delay(1000); 
 }
+
+/*digitalWrite(pin, value)는 디지털 출력 핀 pin에 정수 0(LOW) 혹은 정수 1(HIGH) 값을 써 출력 핀의 전압을 0V 혹은 
+ * 아두이노 보드의 동작 전압에 따라 +3.3V 혹은 +5V로 만드는 함수입니다. 당연히 이 함수도 출력으로 사용되는 핀들을 
+제어하는데 사용하는 것이겠지만, 입력으로 사용하고 있는 핀에 digitalWrite(pin, HIGH)를 사용하여 
+ 내부 풀업 저항을 사용하게 할 수 있습니다. 
+ * 
+ */
+
+
+
+
 
 /* 
  * Debug
