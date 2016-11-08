@@ -1,4 +1,7 @@
-analogwrite ÇÔ¼ö´Â pwmÀÌ¶ó´Â ¹æ½ÄÀ» ÀÌ¿ëÇÏ¿© ¹à±â¸¦ Á¶ÀýÇÏ´Âµ¥ ÀÌ´Â Àü¾ÐÀ» Á¶ÀýÇÏ´Â ¹æ½ÄÀÌ´Ù.
-¸¸¾à ÀÔ·ÂµÈ Àü¾ÐÀÌ 5ÀÌ°í, analogwirte(ÇÉ¹øÈ£, 0~255)·Î ÀÌ·ç¾îÁö´Âµ¥
-ÀÔ·ÂµÈ ÇÉ ¹øÈ£ÀÇ Àü¾ÐÀ» 0~255(ÃÑ 256 °¡Áö)Àü¾ÐÀ» Á¶ÀýÇØÁØ´Ù.
-ex ) analogwrite(3,64) 3¹øÇÉ¿¡ 5vÀÇ 25ÆÛ¼¾Æ® Ãâ·ÂÀ» ÇØÁÜ
+analogwrite í•¨ìˆ˜ëŠ” pwmì´ë¼ëŠ” ë°©ì‹ì„ ì´ìš©í•˜ì—¬ ë°ê¸°ë¥¼ ì¡°ì ˆí•˜ëŠ”ë° ì´ëŠ” ì „ì••ì„ ì¡°ì ˆí•˜ëŠ” ë°©ì‹ì´ë‹¤.
+ë§Œì•½ ìž…ë ¥ëœ ì „ì••ì´ 5ì´ê³ , analogwirte(í•€ë²ˆí˜¸, 0~255)ë¡œ ì´ë£¨ì–´ì§€ëŠ”ë°
+ìž…ë ¥ëœ í•€ ë²ˆí˜¸ì˜ ì „ì••ì„ 0~255(ì´ 256 ê°€ì§€)ì „ì••ì„ ì¡°ì ˆí•´ì¤€ë‹¤.
+ex ) analogwrite(3,64) 3ë²ˆí•€ì— 5vì˜ 25í¼ì„¼íŠ¸ ì¶œë ¥ì„ í•´ì¤Œ\
+
+
+http://kocoafab.cc/tutorial/view/39(ì›í´ã…£)
