@@ -28,7 +28,6 @@ unsigned short ON_OFF = 0;
 */
 void setup() {
   Serial.begin(BAUDRATE); //
-  Serial.print("Arduino based osu keyboard. BY NOVANG! Welcome!\n");
   // 출력 핀으로 설정
   pinMode(KP_CTRL,INPUT_PULLUP);     // define pinmode 핀모드를 정의한다.
   pinMode(KP_SHIFT,INPUT_PULLUP);   // 아두이노 내부에 있는 풀업 저항을 이용하는 함수
