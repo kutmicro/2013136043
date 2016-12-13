@@ -149,25 +149,25 @@ void loop() { //본격적인 메인함수.
          Keyboard.press(KEY_LEFT_ARROW);
          READPIN(); 
          if(V_STOP == 0){ON_OFF=0; break;}
-         delay(3000);
+         delay(2000);
               
          Keyboard.release(KEY_LEFT_CTRL);
          Keyboard.release(KEY_LEFT_ARROW);
          READPIN(); 
          if(V_STOP == 0){ON_OFF=0; break;}    
-         delay(1000); 
+         delay(500); 
 
          Keyboard.press(KEY_LEFT_CTRL);    
          Keyboard.press(KEY_RIGHT_ARROW);
          READPIN(); 
          if(V_STOP == 0){ON_OFF=0; break;}
-         delay(3000);
+         delay(2000);
 
          Keyboard.release(KEY_LEFT_CTRL);
          Keyboard.release(KEY_RIGHT_ARROW);
          READPIN(); 
          if(V_STOP == 0){ON_OFF=0; break;}         
-         delay(1000);
+         delay(500);
          }
     }
   }
@@ -184,7 +184,7 @@ void loop() { //본격적인 메인함수.
          Keyboard.press(KEYZ_CHAR);
          READPIN(); 
          if(V_STOP == 0){ON_OFF=0; break;}
-         delay(3000);
+         delay(2000);
               
          Keyboard.release(KEY_LEFT_SHIFT);
          Keyboard.release(KEY_LEFT_ARROW);
@@ -197,7 +197,7 @@ void loop() { //본격적인 메인함수.
          Keyboard.press(KEYZ_CHAR);
          READPIN(); 
          if(V_STOP == 0){ON_OFF=0; break;}
-         delay(3000);
+         delay(2000);
 
          Keyboard.release(KEY_LEFT_SHIFT);
          Keyboard.release(KEY_RIGHT_ARROW);
