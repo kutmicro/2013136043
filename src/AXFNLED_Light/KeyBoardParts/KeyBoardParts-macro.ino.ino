@@ -18,7 +18,7 @@
 #define LD_TM       1     // led minus count (0-255) 밝기를 줄여주기 위한 변수
 
 unsigned short V_CTRL = 0, V_SHIFT = 0, V_STOP = 0;           // for multi-key input processing 
-unsigned short _ON_CTRL = 0, _ON_SHIFT = 0, _ON_STOP = 0;     // for prevent unnecessory processing
+unsigned short _ON_CTRL = 0, _ON_SHIFT = 0, _ON_STOP = 0;    
 unsigned short TM_CTRL = LD, TM_SHIFT = LD, TM_STOP = LD;   // fading tmp value 
 unsigned short ON_OFF = 0;
 
