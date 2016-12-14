@@ -1,12 +1,41 @@
 #include <Keyboard.h>
+
+#define KEYZ_CHAR   'z'  // z 입력값 지정
+
+#define BAUDRATE    250000  //  시리얼 통신 속도
+
+#define KP_CTRL        A0      // CTRL 키 핀번호.
+#define KP_SHIFT        A1      // SHIFT 키 핀번호.
+#define KP_STOP       A2      // STOP 키 핀번호.
+
+#define LP_CTRL        9       // CTRL led 핀번호.
+#define LP_SHIFT       10      // SHIFT led 핀번호.
+#define LP_STOP       11      // STOP led 핀번호.
+
+#define PROC_SPD    100       // 루프 반복 속도 (us) 
+#define LD          255     // led (0-255) 밝기
+#define LD_TM       1     // led(0-255) 밝기를 줄여주기 위한 변수
+
+unsigned short V_CTRL = 0, V_SHIFT = 0, V_STOP = 0;           // 디지털 값을 저장하기 위한 변수
+unsigned short _ON_STOP = 0;    
+unsigned short TM_CTRL = LD, TM_SHIFT = LD, TM_STOP = LD;   // LED값
+unsigned short ON_OFF = 0;
+
+
+/* 
+ * Init
+*/
 void setup() {
-  Serial.begin(115200);
-  pinMode(A0, INPUT_PULLUP);
-  pinMode(A1, INPUT_PULLUP);
-  pinMode(A2, INPUT_PULLUP);
-  pinMode(9, INPUT_PULLUP);
-  pinMode(10, INPUT_PULLUP);
-  pinMode(11, INPUT_PULLUP);
+  Serial.begin(BAUDRATE); //
+  // 출력 핀으로 설정
+  pinMode(KP_CTRL,INPUT_PULLUP);     // 핀모드를 정의한다.
+  pinMode(KP_SHIFT,INPUT_PULLUP);    // 아두이노 내부에 있는 풀업 저항을 이용하는 함수
+  pinMode(KP_STOP,INPUT_PULLUP);   
+  pinMode(LP_CTRL,OUTPUT);            //디지털 9번 핀을 출력모드로 설정
+  pinMode(LP_SHIFT,OUTPUT);         
+  pinMode(LP_STOP,OUTPUT);
+  digitalWrite(LP_STOP,LD);           //연결되었다는 표시를 나타내기 위한 밝기 설정
+  delay(1000); 
 }
 
 void loop() {
